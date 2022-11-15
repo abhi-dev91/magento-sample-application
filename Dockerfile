@@ -43,8 +43,5 @@ ENV REDIS_PASSWORD=redis123
 ENV SERVER_NAME=localhost
 COPY start.sh .
 RUN chmod u+x start.sh
-USER root
-ENTRYPOINT["nginx", "-g", "daemon of;"]
-USER www-data
-CMD script.sh
+CMD ./start.sh
 
