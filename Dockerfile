@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update &&  apt-get upgrade
+RUN apt-get update &&  apt-get upgrade -y
 RUN apt-get install -y tzdata curl sudo
 RUN apt-get install software-properties-common -y 
 RUN  add-apt-repository ppa:ondrej/php -y &&  apt-get update
