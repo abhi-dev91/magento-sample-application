@@ -23,7 +23,12 @@ sudo -u www-data bin/magento setup:install \
 	--elasticsearch-password=$ELASTICSEARCH_PASS \
 	--session-save-redis-host=$REDIS_HOST \
 	--session-save-redis-password=$REDIS_PASSWORD \
-	--session-save=redis
+	--session-save=redis \
+	--amqp-host=$RABBITMQ_HOST  \
+	--amqp-port=$RABBITMQ_PORT  \
+	--amqp-user=$RABBITMQ_USER  \
+	--amqp-password=$RABBITMQ_PASSWORD  \
+	--amqp-virtualhost="/"
 
 sudo -u www-data bin/magento module:disable Magento_TwoFactorAuth 
 sudo -u www-data bin/magento cache:flush  
